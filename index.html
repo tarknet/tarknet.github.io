@@ -18,6 +18,10 @@
                 padding: 6rem 4rem;
             }
         }
+        /* Custom smooth scrolling for internal links */
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
     <!-- Lucide icons for clean UI elements --><script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -32,7 +36,7 @@
             </a>
             <!-- Desktop Navigation --><nav class="hidden md:flex space-x-8 font-medium">
                 <a href="#services" class="hover:text-[#0070c0] transition duration-300">Services</a>
-                <a href="#projects" class="hover:text-[#0070c0] transition duration-300">Case Studies</a>
+                <!-- Link now correctly points to the new section ID --><a href="#projects" class="hover:text-[#0070c0] transition duration-300">Case Studies</a>
                 <a href="#contact" class="hover:text-[#0070c0] transition duration-300">Contact</a>
             </nav>
             <!-- Mobile Menu Placeholder (Not functional, just for structure) --><button class="md:hidden text-gray-700 hover:text-[#0070c0] transition duration-300">
@@ -86,8 +90,63 @@
             </div>
         </div>
     </section>
+    
+    <!-- NEW 4. Case Studies / Projects Section --><section class="section-padding bg-gray-100" id="projects">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-4">Results That Speak Volumes</h2>
+            <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
+                A selection of recent projects demonstrating measurable impact on scale, efficiency, and intelligence.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project Card 1 --><div class="bg-white p-6 rounded-xl shadow-xl transition duration-300 hover:shadow-2xl">
+                    <span class="inline-block bg-[#0070c0] text-white text-xs font-semibold px-3 py-1 rounded-full mb-3">FINTECH</span>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">Real-Time Risk Engine Migration</h3>
+                    <p class="text-gray-600 mb-4">
+                        Migrated a legacy on-prem risk calculation pipeline to a serverless architecture on GCP, achieving 99.99% uptime.
+                    </p>
+                    <ul class="text-sm space-y-1 text-gray-700">
+                        <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i> Latency reduced by 65%</li>
+                        <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i> 40% reduction in compute cost</li>
+                    </ul>
+                </div>
+                
+                <!-- Project Card 2 --><div class="bg-white p-6 rounded-xl shadow-xl transition duration-300 hover:shadow-2xl">
+                    <span class="inline-block bg-gray-700 text-white text-xs font-semibold px-3 py-1 rounded-full mb-3">E-COMMERCE</span>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">Customer Data Platform (CDP) Build</h3>
+                    <p class="text-gray-600 mb-4">
+                        Consolidated data from 10+ sources into a unified Amazon Redshift warehouse for marketing attribution.
+                    </p>
+                    <ul class="text-sm space-y-1 text-gray-700">
+                        <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i> Single source of truth for all teams</li>
+                        <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i> Faster campaign execution</li>
+                    </ul>
+                </div>
 
-    <!-- 4. Contact Section --><section class="section-padding bg-gray-50" id="contact">
+                <!-- Project Card 3: New Card --><div class="bg-white p-6 rounded-xl shadow-xl transition duration-300 hover:shadow-2xl hidden lg:block">
+                    <span class="inline-block bg-pink-600 text-white text-xs font-semibold px-3 py-1 rounded-full mb-3">HEALTHCARE</span>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">HIPAA Compliant Data Lake</h3>
+                    <p class="text-gray-600 mb-4">
+                        Implemented a secure, compliant data lake architecture for sensitive patient records using Azure Data Lake.
+                    </p>
+                    <ul class="text-sm space-y-1 text-gray-700">
+                        <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i> Automated compliance checks</li>
+                        <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i> 2x faster analytics provisioning</li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <div class="text-center mt-12">
+                 <a href="#contact" class="inline-block border border-[#0070c0] text-[#0070c0] font-semibold py-3 px-8 rounded-lg hover:bg-[#0070c0] hover:text-white transition duration-300">
+                    Discuss Your Project
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Contact Section --><section class="section-padding bg-gray-50" id="contact">
         <div class="container mx-auto max-w-2xl">
             <h2 class="text-4xl font-bold text-center text-gray-900 mb-4">Let's Build Something Great</h2>
             <p class="text-center text-lg text-gray-600 mb-8">
@@ -117,7 +176,7 @@
         </div>
     </section>
 
-    <!-- 5. Footer --><footer class="bg-gray-900 text-white py-8">
+    <!-- 6. Footer --><footer class="bg-gray-900 text-white py-8">
         <div class="container mx-auto px-4 text-center text-sm">
             <p>&copy; <span id="current-year"></span> TarkNet Consulting. All rights reserved.</p>
             <div class="mt-4 space-x-4">
